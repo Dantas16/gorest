@@ -1,4 +1,4 @@
-FROM golang:1.14-alpine
+FROM golang
 
 ADD . /home/api
 

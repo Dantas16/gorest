@@ -2,6 +2,8 @@ version: "3.3"
 services: 
   mongo:
     image: mongo
+    networks:
+      - restapigo
     container_name: mongo
     expose:
       - 27017
@@ -13,6 +15,12 @@ services:
       - mongo
     container_name: apigo
     build: .
+    networks: 
+      - restapigo
     ports:
       - "8080:8080"
     restart: always
+
+networks:
+  restapigo:
+    external: false
